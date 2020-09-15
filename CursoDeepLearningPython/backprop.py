@@ -37,14 +37,16 @@ También creamos la función de coste o función de error
 """
 
 def derivative_w2(Z, T, Y):
-  N, K = T.shape
-  M = Z.shape[1]
-  return (Z.T).dot(T - Y) #revisar
+  return (Z.T).dot(T - Y)
 
 def derivative_b2(T, Y):
   return (T - Y).sum(axis=0)
 
+def derivative_w1(X, Z, T, Y, W2):
+    return (X.T).dot((T - Y).dot(W2.T) * Z * (1 - Z))
 
+def derivative_b1(Z, T, Y, W2):
+    return ((T - Y).dot(W2.T) * Z * (1 - Z)).sum(axis=0)
 
 def cost(T, Y):
   tot = T * np.log(Y)
