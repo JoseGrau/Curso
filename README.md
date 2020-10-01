@@ -1,2 +1,2 @@
 # Curso
-Curso Data Science Udemy
+Curso Deep Learning de Udemy por lazy_programmer
