@@ -56,7 +56,7 @@ def cost2(T, Y):
 
 """Una función para ver el error"""
 
-def err_rate(targets, predictions):
+def error_rate(targets, predictions):
   return np.mean(targets != predictions)
 
 """Función indicadora para la matriz Y."""
@@ -81,7 +81,7 @@ def getData(balance_ones = True):
   X = []
   first = True 
 
-  for line in open(fer2013.csv):
+  for line in open("fer2013.csv"):
     if first:
       first = False
     else:
@@ -116,7 +116,7 @@ def getBinaryData():
   X = []
   first = True 
 
-  for line in open(fer2013.csv):
+  for line in open("fer2013.csv"):
     if first:
       first = False
     else:
