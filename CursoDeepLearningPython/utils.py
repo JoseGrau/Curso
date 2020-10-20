@@ -92,7 +92,7 @@ def getData(balance_ones = True):
   X, Y = np.array(X) / 255.0, np.array(Y)
   
   if balance_ones:
-    X0, Y0 = X[Y!=1, :], Y[Y!=1, :]
+    X0, Y0 = X[Y!=1, :], Y[Y!=1]
     X1 = X[Y==1, :]
     X1 = np.repeat(X1, 9, axis=0)
     X = np.vstack([X0,X1])
